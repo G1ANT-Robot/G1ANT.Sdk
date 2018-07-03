@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>G1ANT Addon</Name>
+    <Description>G1ANT Addon</Description>
+    <Icon>G1ANT.AddonTemplate.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>c17c80e9-c0c1-40c4-b4f0-ae7429c9de76</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>G1ANT.Addon</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">MyAddon.cs</ProjectItem>
+      <ProjectItem TargetFileName="packages.config">template.packages.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
