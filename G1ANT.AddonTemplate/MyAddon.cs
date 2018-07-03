@@ -12,7 +12,7 @@ namespace $safeprojectname$
     [Copyright(Author = "G1ANT LTD", Copyright = "G1ANT LTD", Email = "support@g1ant.com", Website = "www.g1ant.com")]
     [License(Type = "LGPL", ResourceName = "License.txt")]
     [CommandGroup(Name = "", Tooltip = "")]
-    public class $safeitemrootname$ : Addon
+    public class $safeitemrootname$ : Language.Addon
     {
     }
 }

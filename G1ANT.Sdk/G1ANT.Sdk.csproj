@@ -92,8 +92,8 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>cd $(SolutionDir)
-packages\Microsoft.VSSDK.VsixSignTool.15.5.27130\tools\vssdk\VSIXSignTool.exe sign /f G1ANT.Extensions\CodeSigningCertificate.pfx /p Startup-2016 $(TargetDir)$(TargetName).vsix</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
