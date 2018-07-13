@@ -56,6 +56,7 @@ structureName
 	: name
 	;
 
+/* to discuss: */
 name
 	: LETTER NOEOLSPACECHAR*
 	;
