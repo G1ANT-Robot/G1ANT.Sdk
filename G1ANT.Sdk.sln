@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G1ANT.Sdk", "G1ANT.Sdk\G1AN
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C62F4DB-943D-4FE0-B0E2-458E1F9DEBE2}"
 	ProjectSection(SolutionItems) = preProject
+		G1ANT.Sdk.vsix = G1ANT.Sdk.vsix
 		Grammar.g4 = Grammar.g4
 		README.md = README.md
 	EndProjectSection
