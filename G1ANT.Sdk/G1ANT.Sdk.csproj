@@ -39,8 +39,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CopyVsixExtensionFiles>True</CopyVsixExtensionFiles>
-    <CopyVsixExtensionLocation>../../G1ANT.Sdk/G1ANT.Sdk</CopyVsixExtensionLocation>
+    <CopyVsixExtensionFiles>False</CopyVsixExtensionFiles>
+    <CopyVsixExtensionLocation>..\..\G1ANT.Sdk\G1ANT.Sdk</CopyVsixExtensionLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
