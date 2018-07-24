@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("G1ANT.AddonTemplate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("klara.zielinska")]
+[assembly: AssemblyCompany("G1ANT Ltd")]
 [assembly: AssemblyProduct("G1ANT.AddonTemplate")]
-[assembly: AssemblyCopyright("Copyright © klara.zielinska 2018")]
+[assembly: AssemblyCopyright("Copyright © G1ANT Ltd 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

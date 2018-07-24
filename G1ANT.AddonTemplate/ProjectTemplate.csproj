@@ -47,9 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyAddon.cs" />
+    <Compile Include="Addon.cs" />
     <None Include="packages.config" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

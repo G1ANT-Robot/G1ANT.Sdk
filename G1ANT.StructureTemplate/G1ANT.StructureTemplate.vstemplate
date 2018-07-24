@@ -18,5 +18,6 @@
       </Reference>
     </References>
     <ProjectItem ReplaceParameters="true">MyStructure.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true">MyStruct.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>

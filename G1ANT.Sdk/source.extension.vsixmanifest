@@ -3,9 +3,12 @@
     <Metadata>
         <Identity Id="G1ANT.Sdk.89565bb6-b56e-44e9-8636-6efb22b7d8cd" Version="1.0" Language="en-US" Publisher="G1ANT Ltd" />
         <DisplayName>G1ANT.Sdk</DisplayName>
-        <Description xml:space="preserve">The pack constains templates for designing Add-Ons for G1ANT.Robot</Description>
+        <Description xml:space="preserve">G1ANT.Robot Templates for designing Add-Ons</Description>
         <MoreInfo>https://github.com/G1ANT-Robot/G1ANT.Sdk</MoreInfo>
+        <License>License.txt</License>
+        <GettingStartedGuide>https://github.com/G1ANT-Robot/G1ANT.Sdk/blob/master/README.md</GettingStartedGuide>
         <Icon>Favicon.ico</Icon>
+        <Tags>G1ANT G1ANT.Robot Robot RPA</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
