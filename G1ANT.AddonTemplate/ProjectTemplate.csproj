@@ -36,14 +36,15 @@
     <Reference Include="System.Core"/>
     <Reference Include="System.Xml.Linq"/>
     <Reference Include="System.Data.DataSetExtensions"/>
+    <Reference Include="System.Windows.Forms"/>
     $endif$
     $if$ ($targetframeworkversion$ >= 4.0)
     <Reference Include="Microsoft.CSharp"/>
     $endif$
     <Reference Include="System.Data"/>
     <Reference Include="System.Xml"/>
-    <Reference Include="G1ANT.Language, Version=3.58.18037.1539, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\G1ANT.Language.3.253.18184.1200\lib\net452\G1ANT.Language.dll</HintPath>
+    <Reference Include="G1ANT.Language, Version=4.2.18184.2150, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\G1ANT.Language.4.2.18184.2150\lib\net452\G1ANT.Language.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

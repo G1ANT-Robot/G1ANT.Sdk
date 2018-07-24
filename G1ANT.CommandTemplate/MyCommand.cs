@@ -9,8 +9,8 @@ using G1ANT.Language;
 
 namespace $rootnamespace$
 {
-	[Command(Name = "", Tooltip = "")]
-	class $safeitemrootname$ : Command
+	[Command(Name = "$safeitemrootname$", Tooltip = "...")]
+	public class $safeitemrootname$ : Command
 	{
         public class Arguments : CommandArguments
         {
@@ -30,13 +30,13 @@ namespace $rootnamespace$
         // Implement this method
         public void Execute(Arguments arguments)
         {
-            // do something: for example, display argument text on the screen
+            // Do something: for example, display argument text on the screen
             MessageBox.Show(arguments.Text.Value);
 
-            // set result variable to the calculated text argument
+            // Set result variable to the calculated text argument
             Scripter.Variables.SetVariableValue(arguments.Result.Value, new TextStructure(arguments.Text.Value));
 
-            // set other variable to the calculated text argument
+            // If you need, set another variable to the calculated text argument
             Scripter.Variables.SetVariableValue("other", new TextStructure(arguments.Text.Value));
         }
 	}

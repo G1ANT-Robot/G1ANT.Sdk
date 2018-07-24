@@ -8,7 +8,7 @@ namespace G1ANT.StructureTemplate
 {
     public class MyStruct
     {
-        // Example field values of MyStruct which is the part of MyStructure
+        // Example field values of MyStruct which is the part of $safeitemrootname$
         public MyStruct(int num, string text)
         {
             Num = num;

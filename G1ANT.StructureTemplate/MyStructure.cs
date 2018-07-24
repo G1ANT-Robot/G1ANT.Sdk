@@ -7,7 +7,7 @@ using G1ANT.Language;
 
 namespace $rootnamespace$
 {
-    [Structure(Name = "", Priority = 100, Default = default(MyStruct), Tooltip = "...")]
+    [Structure(Name = "$safeitemrootname$", Priority = 100, Default = default(MyStruct), Tooltip = "...")]
     public class $safeitemrootname$ : StructureTyped<MyStruct>
 	{
         public $safeitemrootname$() : 
@@ -32,7 +32,7 @@ namespace $rootnamespace$
 
         public override Structure Get(string index = "")
         {
-            // example implementation, how to get data from this structure
+            // Example implementation, how to get data from this structure
             if (String.IsNullOrWhiteSpace(index))
                 return this;
 
@@ -49,7 +49,7 @@ namespace $rootnamespace$
 
         public override void Set(Structure structure, string index = null)
         {
-            // example implementation, how to set data into this structure
+            // Example implementation, how to set data into this structure
             if (structure == null || structure.Object == null)
                 throw new ArgumentNullException(nameof(structure));
 
@@ -77,10 +77,10 @@ namespace $rootnamespace$
                 format = this.Format;
 
             if (string.IsNullOrWhiteSpace(format))
-                // example: num:15,text:"Hello World"
+                // Example: num:15,text:"Hello World"
                 return $"num:{Value.Num},text:\"{Value.Text}\"";
             else
-                // example: {num},{text} will produce: 15,Hello World
+                // Example: {num},{text} will produce: 15,Hello World
                 return format.Replace("{num}", Value.Num).Replace("{text}", Value.Text);
         }
 
@@ -88,7 +88,8 @@ namespace $rootnamespace$
         {
             // Implement method which will convert value from string into MyStruct 
             // based on format (parameter) or Format (instance property)
-            // format isn't implemented, we're using: // example: num:15,text:"Hello World"
+            // format isn't implemented, we're using: 
+            // example: num:15,text:"Hello World"
             if (value.Contains("num:") == false || value.Contains("text:") == false)
                 throw new ArgumentException("Expected, for example num:15,text:\"Hello World\"");
 

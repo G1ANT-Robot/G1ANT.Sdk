@@ -8,24 +8,24 @@ using G1ANT.Language;
 
 namespace $safeprojectname$
 {
-    [Addon(Name = "", Tooltip = "")]
+    [Addon(Name = "$safeitemrootname$", Tooltip = "")]
     [Copyright(Author = "G1ANT LTD", Copyright = "G1ANT LTD", Email = "support@g1ant.com", Website = "www.g1ant.com")]
     [License(Type = "LGPL", ResourceName = "License.txt")]
-    [CommandGroup(Name = "", Tooltip = "")]
-    public class $safeitemrootname$ : Language.Addon
+    //[CommandGroup(Name = "", Tooltip = "")]
+    public class Addon : Language.Addon
     {
 
         public override void Check()
         {
             base.Check();
             // Check integrity of your Addon
-            // Throw exception if this Addon is wrong in any way
+            // Throw exception if this Addon needs something that doesn't exists
         }
 
         public override void LoadDlls()
         {
             base.LoadDlls();
-            // all dlls embeded in resources will be load automaticaly,
+            // All dlls embeded in resources will be loaded automatically,
             // but you can load here some additional dlls:
 
             // Assembly.Load("...")
@@ -34,13 +34,13 @@ namespace $safeprojectname$
         public override void Initialize()
         {
             base.Initialize();
-            // put here some code to initialize addon's objects
+            // Insert some code here to initialize Addon's objects
         }
 
-        public override void Dispose()
+    public override void Dispose()
         {
             base.Dispose();
-            // put here some code which will dispose all unecessary objects when this addon will be unloaded
+            // Insert some code here which will dispose all unecessary objects when this Addon will be unloaded
         }
     }
 }
