@@ -1,4 +1,4 @@
-﻿/**
+/**
 *    Copyright(C) G1ANT Ltd, All rights reserved
 *    Solution G1ANT.Sdk, File Grammar.g4
 *    www.g1ant.com
@@ -11,7 +11,12 @@
 grammar G1ANT;
 
 script
-	: (command | lineComment)*
+	: scriptLine*
+	;
+	
+scriptLine
+	: command 
+	| lineComment
 	;
 
 lineComment
@@ -19,7 +24,10 @@ lineComment
 	;
 
 command
-	: lineCommand[name ('.' name)?] | blockCommand[name ('.' name)?] | variableCommand | snippetCommand
+	: lineCommand[name ('.' name)?] 
+	| blockCommand[name ('.' name)?] 
+	| variableCommand 
+	| snippetCommand
 	;
 
 snippetCommand
@@ -56,8 +64,9 @@ structureName
 	: name
 	;
 
+/* to discuss: */
 name
-	: LETTER NOEOLSPACECHAR*
+	: LETTER ~EOLSPACECHAR*
 	;
 
 blockCommand[string blockName]
@@ -79,11 +88,18 @@ argumentName
 	;
 
 expression
-	: (noSpaceText | bracketText | lineSnippet | key)+
+	: expressionPart+
+	;
+	
+expressionPart
+	: noSpaceText 
+	| bracketText 
+	| lineSnippet 
+	| key
 	;
 
 noSpaceText
-	: NOEOLSPACECHAR+
+	: ~EOLSPACECHAR+
 	;
 
 bracketText
@@ -98,11 +114,16 @@ key
 	: '⋘' LINECHAR+ '⋙'
 	;
 
-NOEOLSPACECHAR
-	: ~(' ' | '\t' | '\r' | '\n')
+EOLSPACECHAR
+	: ' ' 
+	| '\t' 
+	| '\r' 
+	| '\n'
+	;
 
 SPACE
-	: ' ' | '\t'
+	: ' ' 
+	| '\t'
 	;
 
 LINECHAR
@@ -114,7 +135,8 @@ ANYCHAR
 	;
 
 LETTER
-	: 'a'..'z' | 'A'..'Z'
+	: 'a'..'z' 
+	| 'A'..'Z'
 	;
 
 DIGIT
