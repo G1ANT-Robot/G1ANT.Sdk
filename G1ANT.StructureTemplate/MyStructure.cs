@@ -39,9 +39,9 @@ namespace $rootnamespace$
             switch(index.Trim().ToLower())
             {
                 case "num":
-                    return Value.Num;
+                    return new IntegerStructure(Value.Num);
                 case "text":
-                    return Value.Text;
+                    return new TextStructure(Value.Text);
                 default:
                     throw new ArgumentException($"Unknown index {index}");
             }
@@ -62,7 +62,7 @@ namespace $rootnamespace$
                         Value.Num = (int)structure.Object;
                         break;
                     case "text":
-                        Value.Text = (string)structure.Text;
+                        Value.Text = (string)structure.Object;
                         break;
                     default:
                         throw new ArgumentException($"Unknown index {index}");
@@ -81,7 +81,7 @@ namespace $rootnamespace$
                 return $"num:{Value.Num},text:\"{Value.Text}\"";
             else
                 // Example: {num},{text} will produce: 15,Hello World
-                return format.Replace("{num}", Value.Num).Replace("{text}", Value.Text);
+                return format.Replace("{num}", Value.Num.ToString()).Replace("{text}", Value.Text);
         }
 
         protected override MyStruct Parse(string value, string format = null)
@@ -100,7 +100,7 @@ namespace $rootnamespace$
             string text = value.Substring(indexOfComma + 1).Trim();
             text = text.Substring("text:".Length).Trim();
             text = text.Substring(1, text.Length - 2);
-            Value = new MyStruct(num, text);
+            return new MyStruct(int.Parse(num), text);
         }
     }
 }

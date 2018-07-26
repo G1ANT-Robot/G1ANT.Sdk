@@ -17,7 +17,7 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem ReplaceParameters="true">MyStructure.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MyStructure.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true">MyStruct.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>
