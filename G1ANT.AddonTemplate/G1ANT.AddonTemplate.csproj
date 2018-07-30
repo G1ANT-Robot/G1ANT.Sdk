@@ -70,7 +70,7 @@
   <ItemGroup>
     <VSTemplate Include="G1ANT.AddonTemplate.vstemplate">
       <SubType>Designer</SubType>
-      <OutputSubPath>G1ANT</OutputSubPath>
+      <OutputSubPath>G1ANT.Robot</OutputSubPath>
     </VSTemplate>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

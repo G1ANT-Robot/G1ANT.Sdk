@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="G1ANT.CommandTemplate.vstemplate">
-      <OutputSubPath>G1ANT</OutputSubPath>
+      <OutputSubPath>G1ANT.Robot</OutputSubPath>
       <SubType>Designer</SubType>
     </VSTemplate>
   </ItemGroup>

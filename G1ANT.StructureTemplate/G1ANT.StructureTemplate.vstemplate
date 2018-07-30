@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>G1ANT Structure</Name>
-    <Description>G1ANT Structure</Description>
+    <Name>G1ANT.Robot Structure</Name>
+    <Description>G1ANT.Robot Structure</Description>
     <Icon>G1ANT.StructureTemplate.ico</Icon>
     <TemplateID>c162a5d3-1920-4ec6-a729-b1d69f007309</TemplateID>
     <ProjectType>CSharp</ProjectType>
@@ -17,7 +17,7 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MyStructure.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyStructure.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true">MyStruct.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>

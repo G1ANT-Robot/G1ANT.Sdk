@@ -55,16 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MyStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MyStruct.cs" />
     <None Include="MyStructure.cs" />
     <None Include="G1ANT.StructureTemplate.ico" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="G1ANT.StructureTemplate.vstemplate">
-      <OutputSubPath>G1ANT</OutputSubPath>
+      <SubType>Designer</SubType>
+      <OutputSubPath>G1ANT.Robot</OutputSubPath>
     </VSTemplate>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

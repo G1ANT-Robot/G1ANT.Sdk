@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>G1ANT.Addon Template</Name>
-    <Description>G1ANT.Addon Template</Description>
+    <Name>G1ANT.Robot Addon</Name>
+    <Description>G1ANT.Robot Addon</Description>
     <Icon>G1ANT.AddonTemplate.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>

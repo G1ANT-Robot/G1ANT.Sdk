@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>G1ANT.Robot Command</Name>
-    <Description>G1ANT.Robot Command</Description>
-    <Icon>G1ANT.CommandTemplate.ico</Icon>
-    <TemplateID>1274c561-a483-4873-8683-314ae91dff3f</TemplateID>
+    <Name>G1ANT.Robot Panel</Name>
+    <Description>G1ANT.Robot Panel</Description>
+    <Icon>G1ANT.PanelTemplate.ico</Icon>
+    <TemplateID>c162a5d3-1920-4ec6-a729-b1d69f007309</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
-    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.5.1</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>MyCommand.cs</DefaultName>
+    <DefaultName>MyPanel.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
     <References>
@@ -17,6 +17,6 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyCommand.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyPanel.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>
