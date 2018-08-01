@@ -1,6 +1,6 @@
 /**
 *    Copyright(C) G1ANT Ltd, All rights reserved
-*    Solution G1ANT.Sdk, File Grammar.g4
+*    Solution G1ANT.Sdk, File G1ANT.Language.g4
 *    www.g1ant.com
 *
 *    Licensed under the LGPL license.
