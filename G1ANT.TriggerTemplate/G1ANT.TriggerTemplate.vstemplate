@@ -17,7 +17,6 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyStructure.cs</ProjectItem>
-    <ProjectItem ReplaceParameters="true" OpenInEditor="true">MyStruct.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyTrigger.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>
