@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>G1ANT.Robot Wizard</Name>
-    <Description>G1ANT.Robot Wizard</Description>
-    <Icon>G1ANT.WizardTemplate.ico</Icon>
+    <Name>G1ANT.Robot Trigger</Name>
+    <Description>G1ANT.Robot Trigger</Description>
+    <Icon>G1ANT.TriggerTemplate.ico</Icon>
     <TemplateID>c162a5d3-1920-4ec6-a729-b1d69f007309</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.5.1</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>MyWizard.cs</DefaultName>
+    <DefaultName>MyTrigger.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
     <References>
@@ -17,6 +17,6 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyWizard.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyTrigger.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>
