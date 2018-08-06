@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>G1ANT.Robot Special Variable</Name>
+    <Description>G1ANT.Robot Special Variable</Description>
+    <Icon>G1ANT.SpecialVariableTemplate.ico</Icon>
+    <TemplateID>1274c561-a483-4873-8683-314ae91dff3f</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Code</ProjectSubType>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>MyVariable.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyVariable.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

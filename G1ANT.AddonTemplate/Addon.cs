@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 $if$ ($targetframeworkversion$ >= 3.5)using System.Linq;
 $endif$using System.Text;
-
 using G1ANT.Language;
 
+// Please remember to refresh G1ANT.Language.dll in references
 
 namespace $safeprojectname$
 {
