@@ -10,135 +10,155 @@
 
 grammar G1ANT;
 
+@parser::members {
+  private HashSet<string> blockCommands = new HashSet<string>();
+
+  public void SetBlockCommands(HashSet<string> blockCommands)
+  {
+    this.blockCommands = blockCommands;
+  }
+}
+
 script
-	: scriptLine*
+	: EOL* scriptLine*
 	;
-	
+
 scriptLine
-	: command 
-	| lineComment
+	: SPACE* (emptyLine | lineComment | command)
 	;
+
+emptyLine
+	: EOL ; 
 
 lineComment
-	: '-' LINECHAR* EOL
-	;
+    : LINECOMMENT EOL ;
 
 command
-	: lineCommand[name ('.' name)?] 
-	| blockCommand[name ('.' name)?] 
-	| variableCommand 
+	: blockCommand
+	| lineCommand
+	| variableAssignment
 	| snippetCommand
+	| LINESNIPPET
 	;
 
-snippetCommand
-	: SPACE* '⊂' SPACE* EOL
-	  snippetCode
-	  SPACE* '⊃' SPACE* EOL
+blockCommand
+	: {blockCommands.Contains(_input.Lt(1).Text.ToLower())}? cmd=commandName (SPACE+ argumentValue argumentPair* | argumentPair*)? SPACE* EOL
+	  scriptLine*
+	  END_IDENT SPACE+ { _input.Lt(1).Text.Equals($cmd.text) }? commandName SPACE* EOL
 	;
 
-snippetCode
-	: (ANYCHAR* EOL)*
+lineCommand
+	: commandName (SPACE+ argumentValue argumentPair* | argumentPair*)? SPACE* EOL
 	;
 
-variableCommand
-	: SPACE* '♥' variableName variableIndex* SPACE* '=' SPACE* structureCast? expression SPACE* EOL
+commandName
+	: IDENT ('.' IDENT)?
 	;
 
-variableName
-	: name
-	;
-
-variableIndex
-	: '⟦' LINECHAR* '⟧'
-	;
-
-structureCast
-	: '⟦' structureName (':' structureFormat )? '⟧'
-	;
-
-structureFormat
-	: LINECHAR*
-	;
-
-structureName
-	: name
-	;
-
-/* to discuss: */
-name
-	: LETTER ~EOLSPACECHAR*
-	;
-
-blockCommand[string blockName]
-	: lineCommand[blockName]
-	  script 
-	  SPACE* "end" SPACE+ blockName EOL
-	;
-
-lineCommand[string commandName]
-	: SPACE* commandName SPACE* (SPACE+ arguments)? EOL
-	;
-
-arguments
-	: (argumentName SPACE+)? argumentValue (SPACE+ argumentName SPACE+ argumentValue)+
+argumentPair
+	: SPACE+ argumentName SPACE+ argumentValue
 	;
 
 argumentName
-	: name
+	: IDENT
+	;
+
+argumentValue
+	: commandExpression
+	;
+
+commandExpression
+	: (expression
+	| ~(EOL|SPACE))+
+	;
+
+snippetCommand
+	: '⊂' EOL
+	  snippetCode
+	  '⊃' EOL
+	;
+
+snippetCode
+	: ((~(EOL|'⊃')*)? EOL)*
+	;
+
+variableAssignment
+	: VARIABLE SPACE* '=' SPACE* STRUCTURECAST? variableExpression EOL
+	;
+
+variableExpression
+	: (expression
+	| ~EOL)+
 	;
 
 expression
-	: expressionPart+
-	;
-	
-expressionPart
-	: noSpaceText 
-	| bracketText 
-	| lineSnippet 
-	| key
+    : VARIABLE
+    | BRACKETTEXT
+    | LINESNIPPET
+    | KEY
+    ;
+
+VARIABLE
+    : '♥' IDENT VARIABLEINDEX*
+    ;
+
+STRUCTURECAST
+	: '⟦' STRUCTURENAME (':' STRUCTUREFORMAT )? '⟧'
 	;
 
-noSpaceText
-	: ~EOLSPACECHAR+
+fragment STRUCTURENAME
+	: IDENT
 	;
 
-bracketText
-	: '‴' LINECHAR* '‴'
+fragment STRUCTUREFORMAT
+	: ~[\r\n]*
 	;
 
-lineSnippet
-	: '⊂' LINECHAR+ '⊃'
+BRACKETTEXT
+	: '‴' ~[\r\n‴]* '‴'
 	;
 
-key
-	: '⋘' LINECHAR+ '⋙'
+LINESNIPPET
+	: '⊂' ~[\r\n⊃]* '⊃'
 	;
 
-EOLSPACECHAR
-	: ' ' 
-	| '\t' 
-	| '\r' 
-	| '\n'
+KEY
+	: '⋘' ~[\r\n⋙]* '⋙'
 	;
 
-SPACE
-	: ' ' 
-	| '\t'
+VARIABLEINDEX
+	: '⟦' ~[\r\n⟧]* '⟧'
 	;
 
-LINECHAR
-	: ~EOL
+COMMENT
+	: '-' ;
+
+END_IDENT
+	: [eE] [nN] [dD]
 	;
 
-ANYCHAR
-	: .
+IDENT
+	: LETTER (LETTER | DIGIT)*
+	;
+
+LINECOMMENT
+	: '-' ~[\r\n]*
 	;
 
 LETTER
-	: 'a'..'z' 
+	: 'a'..'z'
 	| 'A'..'Z'
 	;
 
 DIGIT
 	: '0'..'9'
 	;
+
+SPACE
+	: ' ' | '\t';
+
+EOL
+    : '\r'? '\n' | '\r';
+
+WS
+	: SPACE+ -> skip;
