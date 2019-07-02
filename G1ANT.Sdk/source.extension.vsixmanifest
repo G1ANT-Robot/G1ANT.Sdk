@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="G1ANT.Sdk.89565bb6-b56e-44e9-8636-6efb22b7d8cd" Version="1.0" Language="en-US" Publisher="G1ANT Ltd" />
+        <Identity Id="G1ANT.Sdk.89565bb6-b56e-44e9-8636-6efb22b7d8cd" Version="1.0" Language="en-US" Publisher="G1ANT Robot Ltd" />
         <DisplayName>G1ANT.Sdk</DisplayName>
         <Description xml:space="preserve">G1ANT.Robot Templates for designing Add-Ons</Description>
         <MoreInfo>https://github.com/G1ANT-Robot/G1ANT.Sdk</MoreInfo>
