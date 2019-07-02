@@ -1,13 +1,13 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "categories": [ "build", "coding" ],
+  "categories": [ "visual studio extensions" ],
   "identity": {
-    "internalName": "G1ANT.Sdk"
+    "internalName": "g1ant-sdk"
   },
   "overview": "Overview.md",
   "priceCategory": "free",
-  "publisher": "g1ant-robot-ltd",
   "private": false,
+  "publisher": "g1ant-robot-ltd",
   "qna": true,
   "repo": "https://github.com/G1ANT-Robot/G1ANT.Sdk"
 }
