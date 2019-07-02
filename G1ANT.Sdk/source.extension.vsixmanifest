@@ -8,7 +8,7 @@
 		<License>License.txt</License>
 		<GettingStartedGuide>https://github.com/G1ANT-Robot/G1ANT.Sdk/blob/master/README.md</GettingStartedGuide>
 		<Icon>Favicon.ico</Icon>
-		<PreviewImage>Favicon.ico</PreviewImage>
+		<PreviewImage>Prewiev.png</PreviewImage>
 		<Tags>G1ANT;G1ANT.Robot;Robot;RPA</Tags>
 	</Metadata>
 	<Installation>
