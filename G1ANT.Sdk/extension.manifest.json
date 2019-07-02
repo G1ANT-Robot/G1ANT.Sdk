@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [ "build", "coding" ],
+  "identity": {
+    "internalName": "G1ANT.Sdk"
+  },
+  "overview": "Overview.md",
+  "priceCategory": "free",
+  "publisher": "G1ANT Robot Ltd",
+  "private": false,
+  "qna": true,
+  "repo": "https://github.com/G1ANT-Robot/G1ANT.Sdk"
+}
