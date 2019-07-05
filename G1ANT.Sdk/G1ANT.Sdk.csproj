@@ -112,6 +112,13 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
+    <ProjectReference Include="..\G1ANT.SpecialVariableTemplate\G1ANT.SpecialVariableTemplate.csproj">
+      <Project>{34C2B697-03D7-40B7-88BC-563275BB8550}</Project>
+      <Name>G1ANT.SpecialVariableTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
     <ProjectReference Include="..\G1ANT.StructureTemplate\G1ANT.StructureTemplate.csproj">
       <Project>{C6ABB99C-2AE3-4D25-89BA-3ED892B4481D}</Project>
       <Name>G1ANT.StructureTemplate</Name>
