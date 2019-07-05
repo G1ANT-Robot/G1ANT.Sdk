@@ -94,7 +94,9 @@
     <ProjectReference Include="..\G1ANT.BlockCommandTemplate\G1ANT.BlockCommandTemplate.csproj">
       <Project>{7b95949b-08ec-45a6-8acb-804003acb4d3}</Project>
       <Name>G1ANT.BlockCommandTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
     <ProjectReference Include="..\G1ANT.CommandTemplate\G1ANT.CommandTemplate.csproj">
       <Project>{BC7BD01E-082B-4F22-AC04-DA9FD9EB96D3}</Project>
@@ -106,7 +108,9 @@
     <ProjectReference Include="..\G1ANT.PanelTemplate\G1ANT.PanelTemplate.csproj">
       <Project>{a97a1f93-43d9-480e-84d2-7ef0b6d44f42}</Project>
       <Name>G1ANT.PanelTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
     <ProjectReference Include="..\G1ANT.StructureTemplate\G1ANT.StructureTemplate.csproj">
       <Project>{C6ABB99C-2AE3-4D25-89BA-3ED892B4481D}</Project>
@@ -118,12 +122,16 @@
     <ProjectReference Include="..\G1ANT.TriggerTemplate\G1ANT.TriggerTemplate.csproj">
       <Project>{34c2b697-03d7-40b7-88bc-563275bb855f}</Project>
       <Name>G1ANT.TriggerTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
     <ProjectReference Include="..\G1ANT.WizardTemplate\G1ANT.WizardTemplate.csproj">
       <Project>{34c2b697-03d7-40b7-88bc-563275bb855e}</Project>
       <Name>G1ANT.WizardTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
