@@ -7,7 +7,7 @@
     <TemplateID>c162a5d3-1920-4ec6-a729-b1d69f007309</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
-    <RequiredFrameworkVersion>4.5.1</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyStructure.cs</DefaultName>
   </TemplateData>
