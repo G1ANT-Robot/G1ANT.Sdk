@@ -16,6 +16,9 @@
       <Reference>
         <Assembly>System</Assembly>
       </Reference>
+      <Reference>
+        <Assembly>System.Windows.Forms</Assembly>
+      </Reference>
     </References>
     <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true" OpenInEditor="true">MyPanel.cs</ProjectItem>
   </TemplateContent>

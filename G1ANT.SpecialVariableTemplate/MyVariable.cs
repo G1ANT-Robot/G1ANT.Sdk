@@ -9,35 +9,21 @@ using G1ANT.Language;
 
 namespace $rootnamespace$
 {
-	[Command(Name = "$safeitemrootname$", Tooltip = "...")]
-	public class $safeitemrootname$ : Command
+	[Variable(Name = "$safeitemrootname$", Tooltip = "...")]
+	public class $safeitemrootname$ : Variable
 	{
-        public class Arguments : CommandArguments
-        {
-            // Enter all arguments you need
-            [Argument(Required = true, Tooltip = "...")]
-            public TextStructure Text { get; set; }
-
-            [Argument(Tooltip = "Result variable")]
-            public VariableStructure Result { get; set; } = new VariableStructure("result");
-        }
-
-        public $safeitemrootname$(AbstractScripter scripter) : 
-            base(scripter)
+        public $safeitemrootname$(AbstractScripter scripter) : base(scripter)
         {
         }
 
-        // Implement this method
-        public void Execute(Arguments arguments)
+        public override Structure GetValue(string index = "")
         {
-            // Do something: for example, display argument text on the screen
-            MessageBox.Show(arguments.Text.Value);
+            return new TextStructure("something");
+        }
 
-            // Set result variable to the calculated text argument
-            Scripter.Variables.SetVariableValue(arguments.Result.Value, new TextStructure(arguments.Text.Value));
-
-            // If you need, set another variable to the calculated text argument
-            Scripter.Variables.SetVariableValue("other", new TextStructure(arguments.Text.Value));
+        public override void SetValue(Structure value, string index = "")
+        {
+            // set something to value.ToString() or do something else
         }
 	}
 }
