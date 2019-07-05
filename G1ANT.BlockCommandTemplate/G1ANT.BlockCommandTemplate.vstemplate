@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Block Command</Name>
     <Description>G1ANT.Robot Block Command</Description>
     <Icon>G1ANT.BlockCommandTemplate.ico</Icon>
-    <TemplateID>CE2CD12A-2821-487E-A818-EA360F828972</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyBlockCommand.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

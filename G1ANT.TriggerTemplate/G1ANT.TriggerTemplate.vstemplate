@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Trigger</Name>
     <Description>G1ANT.Robot Trigger</Description>
     <Icon>G1ANT.TriggerTemplate.ico</Icon>
-    <TemplateID>99E32135-5D90-4D67-B494-9C6D762AC293</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyTrigger.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

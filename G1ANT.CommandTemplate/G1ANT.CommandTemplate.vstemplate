@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Command</Name>
     <Description>G1ANT.Robot Command</Description>
     <Icon>G1ANT.CommandTemplate.ico</Icon>
-    <TemplateID>1274c561-a483-4873-8683-314ae91dff3f</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyCommand.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

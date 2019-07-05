@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Wizard</Name>
     <Description>G1ANT.Robot Wizard</Description>
     <Icon>G1ANT.WizardTemplate.ico</Icon>
-    <TemplateID>6669A0D0-CC71-401C-A0BE-D6B76D3EAAE3</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyWizard.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Panel</Name>
     <Description>G1ANT.Robot Panel</Description>
     <Icon>G1ANT.PanelTemplate.ico</Icon>
-    <TemplateID>9B4B29E3-60ED-4C50-B672-F9BCC5FBEA63</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyPanel.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

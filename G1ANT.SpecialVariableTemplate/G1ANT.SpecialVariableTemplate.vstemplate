@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Special Variable</Name>
     <Description>G1ANT.Robot Special Variable</Description>
     <Icon>G1ANT.SpecialVariableTemplate.ico</Icon>
-    <TemplateID>E80E1ACA-0325-45E8-B71B-ACDE2B436246</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyVariable.cs</DefaultName>
   </TemplateData>
   <TemplateContent>

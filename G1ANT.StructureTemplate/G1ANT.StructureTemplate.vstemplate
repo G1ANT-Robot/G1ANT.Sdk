@@ -4,11 +4,9 @@
     <Name>G1ANT.Robot Structure</Name>
     <Description>G1ANT.Robot Structure</Description>
     <Icon>G1ANT.StructureTemplate.ico</Icon>
-    <TemplateID>c162a5d3-1920-4ec6-a729-b1d69f007309</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Code</ProjectSubType>
     <RequiredFrameworkVersion>4.6.1</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyStructure.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
