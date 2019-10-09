@@ -46,8 +46,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.4.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.4\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="G1ANT.Language, Version=4.101.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\G1ANT.Language.4.101.0\lib\net452\G1ANT.Language.dll</HintPath>
+    <Reference Include="G1ANT.Language, Version=4.104.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\G1ANT.Language.4.104.0\lib\net452\G1ANT.Language.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.6.11.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.6.11\lib\Net45\HtmlAgilityPack.dll</HintPath>
