@@ -65,7 +65,10 @@
   <ItemGroup>
     <Compile Include="Addon.cs" />
     <None Include="License.txt" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

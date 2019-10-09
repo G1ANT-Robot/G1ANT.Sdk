@@ -61,7 +61,17 @@ namespace G1ANT.AddonTemplate.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to GNU LESSER GENERAL PUBLIC LICENSE
+        ///Version 3, 29 June 2007
+        ///
+        ///Copyright © 2007 Free Software Foundation, Inc. &lt;https://fsf.org/&gt;
+        ///
+        ///Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+        ///
+        ///This version of the GNU Lesser General Public License incorporates the terms and conditions of version 3 of the GNU General Public License, supplemented by the additional permissions listed below.
+        ///
+        ///0. Additional Definitions.
+        ///As used herein, “this License” [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string License_txt {
             get {
