@@ -9,7 +9,7 @@ using G1ANT.Language;
 namespace $safeprojectname$
 {
     [Addon(Name = "$safeitemrootname$", Tooltip = "...")]
-    [Copyright(Author = "G1ANT LTD", Copyright = "G1ANT LTD", Email = "support@g1ant.com", Website = "www.g1ant.com")]
+    [Copyright(Author = "Company Ltd", Copyright = "Company Ltd", Email = "support@company.com", Website = "www.company.com")]
     [License(Type = "LGPL", ResourceName = "License.txt")]
     //[CommandGroup(Name = "", Tooltip = "")]
     public class Addon : Language.Addon
