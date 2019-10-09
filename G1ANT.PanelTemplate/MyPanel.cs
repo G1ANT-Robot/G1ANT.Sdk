@@ -11,7 +11,7 @@ namespace $rootnamespace$
     [Panel(Name = "Addons",
         Tooltip = "Lists all available addons and allows to select and deselect them, turning them on and off.",
         DockingSide = DockingSide.Left, InitialAppear = false, Width = 250)]
-    public partial class AddonsPanel : RobotPanel
+    public partial class AddonsPanel : Language.RobotPanel
     {
         public $safeitemrootname$()
         {

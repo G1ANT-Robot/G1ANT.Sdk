@@ -10,7 +10,7 @@ namespace $rootnamespace$
 {
     [Wizard(Name = "$safeitemrootname$", ExecuteOnFirstRun = false, Menu = "Tools\My Wizards", 
         Shortcut = Keys.None, ToolTip = "...")]
-    public class $safeitemrootname$ : Wizard
+    public class $safeitemrootname$ : Language.Wizard
 	{
 
         public override void Execute(AbstractScripter scripter)

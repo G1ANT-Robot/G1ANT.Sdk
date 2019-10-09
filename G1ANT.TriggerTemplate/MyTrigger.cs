@@ -9,7 +9,7 @@ using G1ANT.Language;
 namespace $rootnamespace$
 {
     [Trigger(Name = "$safeitemrootname$"]
-    public class $safeitemrootname$ : TriggerTyped<MailTrigger.Arguments, MailTrigger.TaskArguments>, IDisposable
+    public class $safeitemrootname$ : Language.TriggerTyped<MailTrigger.Arguments, MailTrigger.TaskArguments>, IDisposable
 	{
         public class Arguments : TriggerArguments
         {

@@ -8,7 +8,7 @@ using G1ANT.Language;
 namespace $rootnamespace$
 {
     [Structure(Name = "$safeitemrootname$", Priority = 100, Default = default(MyStruct), Tooltip = "...")]
-    public class $safeitemrootname$ : StructureTyped<MyStruct>
+    public class $safeitemrootname$ : Language.StructureTyped<MyStruct>
 	{
         public $safeitemrootname$() : 
             base(new MyStruct(), null, null)

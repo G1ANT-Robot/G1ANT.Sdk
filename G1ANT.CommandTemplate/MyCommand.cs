@@ -9,7 +9,7 @@ using G1ANT.Language;
 namespace $rootnamespace$
 {
 	[Command(Name = "$safeitemrootname$", Tooltip = "...")]
-	public class $safeitemrootname$ : G1ANT.Language.Command
+	public class $safeitemrootname$ : Language.Command
 	{
         public class Arguments : CommandArguments
         {

@@ -8,7 +8,7 @@ using G1ANT.Language;
 namespace $rootnamespace$
 {
     [Command(Name = "$safeitemrootname$", Priority = 100, Default = default(MyStruct), Tooltip = "...")]
-    public class $safeitemrootname$ : BlockCommand
+    public class $safeitemrootname$ : Language.BlockCommand
 	{
         public class Arguments : CommandArguments
         {
