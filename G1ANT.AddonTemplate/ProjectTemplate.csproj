@@ -64,7 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Addon.cs" />
-    <EmbeddedResource Include="License.txt" />
+    <None Include="License.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
