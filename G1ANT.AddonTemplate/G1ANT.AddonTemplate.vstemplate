@@ -16,7 +16,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\Resources.resx">Resources.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true" OpenInEditor="true">Addon.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="false">License.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true">License.txt</ProjectItem>
       <ProjectItem TargetFileName="packages.config">template.packages.config</ProjectItem>
     </Project>
   </TemplateContent>
