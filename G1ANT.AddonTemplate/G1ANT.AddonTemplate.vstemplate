@@ -15,7 +15,7 @@
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" OpenInEditor="true">Addon.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true">License.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="false">License.txt</ProjectItem>
       <ProjectItem TargetFileName="packages.config">template.packages.config</ProjectItem>
     </Project>
   </TemplateContent>
