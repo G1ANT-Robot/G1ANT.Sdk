@@ -14,8 +14,10 @@
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <!-- REMOVE IT
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\Resources.resx">Properties\Resources.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\Resources.Designer.cs">Properties\Resources.Designer.cs</ProjectItem>
+      -->
       <ProjectItem ReplaceParameters="true" OpenInEditor="true">Addon.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">License.txt</ProjectItem>
       <ProjectItem TargetFileName="packages.config">template.packages.config</ProjectItem>
