@@ -75,19 +75,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    IF $(ConfigurationName) EQU Release (
+       @COPY $(TargetPath) $(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On /B /Y
+       @ECHO File was copied to $(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On\$(TargetFileName)
+       @ECHO Execute G1ANT.Robot and check it out on the Addons panel
+    ) ELSE (
+       @ECHO If you want to see your Addon in the G1ANT.Studio, you should
+       @ECHO Copy file '$(TargetPath)'
+       @ECHO Into '$(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On\$(TargetFileName)'
+       @ECHO or build in release environment
+    )
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-    IF $(ConfigurationName) EQU Release (
-        @COPY $(TargetPath) $(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On /B /Y
-        @ECHO File was copied to $(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On\$(TargetFileName)
-        @ECHO Execute G1ANT.Robot and check it out on the Addons panel
-    ) ELSE (
-        @ECHO If you want to see your Addon in the G1ANT.Studio, you should
-        @ECHO Copy file '$(TargetPath)'
-        @ECHO Into '$(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\G1ANT.Robot\Add-On\$(TargetFileName)'
-        @ECHO or build in release environment
-    )
   </Target>
-
+  -->
  </Project>
