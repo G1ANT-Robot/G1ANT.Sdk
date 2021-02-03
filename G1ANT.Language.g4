@@ -8,157 +8,175 @@
 *
 */
 
-grammar G1ANT;
+grammar g1ant;
 
-@parser::members {
-  private HashSet<string> blockCommands = new HashSet<string>();
-
-  public void SetBlockCommands(HashSet<string> blockCommands)
-  {
-    this.blockCommands = blockCommands;
-  }
+@lexer::header {
+  using AntlrTest.G1Parser;
 }
 
-script
-	: EOL* scriptLine*
-	;
+@lexer::members {
+  public static LexerTokenLookup tokenLookup = LexerTokenLookup.Instance;
+}
 
-scriptLine
-	: SPACE* (emptyLine | lineComment | command)
-	;
+@parser::header {
+  using AntlrTest.G1Parser;
+}
 
-emptyLine
-	: EOL ; 
+@parser::members {
+  public static LexerTokenLookup tokenLookup = LexerTokenLookup.Instance;
+}
 
-lineComment
-    : LINECOMMENT EOL ;
+tokens {
+  BLOCK_COMMAND_NAME,
+  BLOCK_COMMAND_END
+}
 
-command
-	: blockCommand
-	| lineCommand
-	| variableAssignment
-	| snippetCommand
-	| LINESNIPPET
-	;
+script :
+  (action)+ EOF;
 
-blockCommand
-	: {blockCommands.Contains(_input.Lt(1).Text.ToLower())}? cmd=commandName (SPACE+ argumentValue argumentPair* | argumentPair*)? SPACE* EOL
-	  scriptLine*
-	  END_IDENT SPACE+ { _input.Lt(1).Text.Equals($cmd.text) }? commandName SPACE* EOL
-	;
+action :
+    WHITESPACE* 
+    (
+    EOL 
+    | (
+        comment 
+        | command 
+        | {tokenLookup.IsEnabled(g1antParser.BLOCK_COMMAND_NAME) && tokenLookup.IsEnabled(g1antParser.BLOCK_COMMAND_END)}? blockCommand 
+        | assignment 
+        | snippet 
+        | snippetMultiline
+      ) WHITESPACE* (EOL | EOF)
+    );
 
-lineCommand
-	: commandName (SPACE+ argumentValue argumentPair* | argumentPair*)? SPACE* EOL
-	;
+command :
+    commandName=COMMAND_NAME (WHITESPACE+ expression)? (WHITESPACE+ commandArgument)*;
 
-commandName
-	: IDENT ('.' IDENT)?
-	;
+blockCommand:
+    commandName=BLOCK_COMMAND_NAME (WHITESPACE+ expression)? (WHITESPACE+ commandArgument)* WHITESPACE* EOL+
+    (action)*
+    WHITESPACE* BLOCK_COMMAND_END (WHITESPACE+ commandNameEnd=BLOCK_COMMAND_NAME)?;
 
-argumentPair
-	: SPACE+ argumentName SPACE+ argumentValue
-	;
+commandArgument :
+    identifier WHITESPACE+ expression;
 
-argumentName
-	: IDENT
-	;
+expressionWithSpaces:
+    (WHITESPACE* (quotedText | expressionPart))* WHITESPACE*;
 
-argumentValue
-	: commandExpression
-	;
+expressionPartsWithSpaces:
+    (WHITESPACE* expressionPart)* WHITESPACE*;
 
-commandExpression
-	: (expression
-	| ~(EOL|SPACE))+
-	;
+expression :
+    (quotedText | expressionPart | keystroke)*;
 
-snippetCommand
-	: '⊂' EOL
-	  snippetCode
-	  '⊃' EOL
-	;
+expressionPart :
+    variable
+    | snippet
+    | simpleText;
 
-snippetCode
-	: ((~(EOL|'⊃')*)? EOL)*
-	;
+keystroke:
+    LSHORTCUT expressionPartsWithSpaces RSHORTCUT;
 
-variableAssignment
-	: VARIABLE SPACE* '=' SPACE* STRUCTURECAST? variableExpression EOL
-	;
+snippet:
+    LSNIPPET expressionWithSpaces RSNIPPET;
 
-variableExpression
-	: (expression
-	| ~EOL)+
-	;
+snippetMultiline:
+    LSNIPPET
+    WHITESPACE*
+    (expressionWithSpaces EOL)+
+    WHITESPACE*
+    RSNIPPET;
 
-expression
-    : VARIABLE
-    | BRACKETTEXT
-    | LINESNIPPET
-    | KEY
-    ;
+assignment :
+    variable WHITESPACE* VAR_ASSIGN WHITESPACE* (variableIndex)? expressionWithSpaces;
 
-VARIABLE
-    : '♥' IDENT VARIABLEINDEX*
-    ;
+variable :
+    VARIABLE variableIndex*;
 
-STRUCTURECAST
-	: '⟦' STRUCTURENAME (':' STRUCTUREFORMAT )? '⟧'
-	;
+variableIndex :
+    LVARINDEX expressionWithSpaces RVARINDEX;
 
-fragment STRUCTURENAME
-	: IDENT
-	;
+comment :
+    COMMENT_PREFIX ~(EOL)*;
 
-fragment STRUCTUREFORMAT
-	: ~[\r\n]*
-	;
+identifier :
+    ID
+    | COMMAND_NAME
+    | BLOCK_COMMAND_NAME
+    | BLOCK_COMMAND_END;
 
-BRACKETTEXT
-	: '‴' ~[\r\n‴]* '‴'
-	;
+quotedText :
+    QUOTE_CHAR expressionPartsWithSpaces QUOTE_CHAR;
 
-LINESNIPPET
-	: '⊂' ~[\r\n⊃]* '⊃'
-	;
+simpleText
+	: ~(QUOTE_CHAR | WHITESPACE | EOL | VARIABLE | LVARINDEX | RVARINDEX | LSNIPPET | RSNIPPET | LSHORTCUT | RSHORTCUT | ARRAY_DELIMITER | POINT_DELIMITER)+;
 
-KEY
-	: '⋘' ~[\r\n⋙]* '⋙'
-	;
+QUOTE_CHAR : '‴';
+LSNIPPET : '⊂';
+RSNIPPET : '⊃';
+LSHORTCUT : '⋘';
+RSHORTCUT : '⋙';
+LVARINDEX : '⟦';
+RVARINDEX : '⟧';
+PROCEDURE_PREFIX : '➤';
+LABEL_PREFIX : '➜';
+ARRAY_DELIMITER : '❚';
+POINT_DELIMITER : '⫽';
+SEARCH_CHAR : '✱';
+VAR_ASSIGN : '=';
+COMMAND_GROUP_DELIMITER : '.';
+COMMENT_PREFIX : '-';
 
-VARIABLEINDEX
-	: '⟦' ~[\r\n⟧]* '⟧'
-	;
+VARIABLE : VAR_PREFIX ID;
 
-COMMENT
-	: '-' ;
+//BLOCK_COMMAND_END : E N D;
 
-END_IDENT
-	: [eE] [nN] [dD]
-	;
+COMMAND_NAME : 
+    ID (COMMAND_GROUP_DELIMITER ID)?
+    {
+        if (tokenLookup.IsEnabled(g1antParser.BLOCK_COMMAND_NAME) && tokenLookup.IsEnabled(g1antParser.BLOCK_COMMAND_END))
+        {
+            if(tokenLookup.Contains(g1antParser.BLOCK_COMMAND_NAME, Text)) 
+                Type = g1antParser.BLOCK_COMMAND_NAME;
+            else if(tokenLookup.Contains(g1antParser.BLOCK_COMMAND_END, Text)) 
+                Type = g1antParser.BLOCK_COMMAND_END;
+        }
+    };
 
-IDENT
-	: LETTER (LETTER | DIGIT)*
-	;
+ID : VALID_ID_CHAR (VALID_ID_CHAR | NUMBER)*;
 
-LINECOMMENT
-	: '-' ~[\r\n]*
-	;
+WHITESPACE : ' ' | '\t';
 
-LETTER
-	: 'a'..'z'
-	| 'A'..'Z'
-	;
+EOL : [\r\n]+;
 
-DIGIT
-	: '0'..'9'
-	;
+ANYCHAR : '\u0000'..'\uFFFE';
 
-SPACE
-	: ' ' | '\t';
+fragment VAR_PREFIX : '♥';
+fragment VALID_ID_CHAR : ('a' .. 'z') | ('A' .. 'Z') | '_' ;
+fragment NUMBER : ('0' .. '9') ;
 
-EOL
-    : '\r'? '\n' | '\r';
-
-WS
-	: SPACE+ -> skip;
+fragment A : [aA]; // match either an 'a' or 'A'
+fragment B : [bB];
+fragment C : [cC];
+fragment D : [dD];
+fragment E : [eE];
+fragment F : [fF];
+fragment G : [gG];
+fragment H : [hH];
+fragment I : [iI];
+fragment J : [jJ];
+fragment K : [kK];
+fragment L : [lL];
+fragment M : [mM];
+fragment N : [nN];
+fragment O : [oO];
+fragment P : [pP];
+fragment Q : [qQ];
+fragment R : [rR];
+fragment S : [sS];
+fragment T : [tT];
+fragment U : [uU];
+fragment V : [vV];
+fragment W : [wW];
+fragment X : [xX];
+fragment Y : [yY];
+fragment Z : [zZ];
